@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Real-time weather dashboard using JavaScript and REST API">
+    <meta name="author" content="Priya Mali">
+
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="weather-container">
+
+        <section class="weather-card" aria-labelledby="weather-title">
+
+            <h1 id="weather-title">Weather Dashboard</h1>
+
+            <p class="subtitle">
+                Search for a city to get current weather information.
+            </p>
+
+            <!-- Search -->
+            <form id="weather-form" class="search-form">
+
+                <label for="city-input" class="sr-only">
+                    Enter city name
+                </label>
+
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="Enter city name..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+            <!-- Loading message -->
+            <p id="loading" class="loading hidden">
+                Loading weather data...
+            </p>
+
+            <!-- Error message -->
+            <p
+                id="error-message"
+                class="error hidden"
+                role="alert">
+            </p>
+
+            <!-- Weather Information -->
+            <section id="weather-result" class="weather-result hidden">
+
+                <div class="weather-header">
+
+                    <div>
+                        <h2 id="city-name">City</h2>
+                        <p id="weather-description">
+                            Weather condition
+                        </p>
+                    </div>
+
+                    <div class="weather-icon">
+                        <img
+                            id="weather-icon"
+                            src=""
+                            alt="Weather icon"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="temperature">
+
+                    <span id="temperature">--</span>°C
+
+                </div>
+
+                <div class="weather-details">
+
+                    <div class="detail-box">
+
+                        <span class="detail-icon">💧</span>
+
+                        <div>
+                            <h3>Humidity</h3>
+                            <p>
+                                <span id="humidity">--</span>%
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="detail-box">
+
+                        <span class="detail-icon">💨</span>
+
+                        <div>
+                            <h3>Wind Speed</h3>
+                            <p>
+                                <span id="wind-speed">--</span> m/s
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="detail-box">
+
+                        <span class="detail-icon">🌡️</span>
+
+                        <div>
+                            <h3>Feels Like</h3>
+                            <p>
+                                <span id="feels-like">--</span>°C
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="detail-box">
+
+                        <span class="detail-icon">🔽</span>
+
+                        <div>
+                            <h3>Pressure</h3>
+                            <p>
+                                <span id="pressure">--</span> hPa
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
